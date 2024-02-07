@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MovieFlix</string>
+    <string name="failed_to_get_movies">Failed to get movies</string>
+    <string name="failed_to_get_details">Failed to get movie details</string>
+    <string name="failed_to_get_reviews">Failed to get movie reviews</string>
+    <string name="failed_to_get_similar">Failed to get similar movies</string>
+    <string name="retry">Retry</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="cast">Cast</string>
+    <string name="runtime">Runtime</string>
+    <string name="description">Description</string>
+    <string name="runtimeFormat">%1$d h %2$d min</string>
+    <string name="reviews">Reviews</string>
+</resources>

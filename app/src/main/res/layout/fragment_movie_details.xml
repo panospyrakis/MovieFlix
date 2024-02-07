@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".features.moviedetails.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_normal" />
+
+        <RatingBar
+            android:id="@+id/rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_very_small"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/gold"
+            android:rating="4"
+            android:stepSize="0.5"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/releaseDate" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/share_button_width"
+            android:layout_height="@dimen/share_button_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@drawable/share_button_bg"
+            android:elevation="1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_back"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintTop_toTopOf="@id/poster" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/favouriteBtn"
+            android:layout_width="@dimen/favourite_button_width"
+            android:layout_height="@dimen/favourite_button_height"
+            android:layout_marginEnd="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@drawable/favourite_selector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/poster" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/shareBtn"
+            android:layout_width="@dimen/share_button_width"
+            android:layout_height="@dimen/share_button_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:layout_marginEnd="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@drawable/share_button_bg"
+            android:elevation="1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_share"
+            android:tint="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/poster"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/poster"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/poster_details_height"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_big"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/poster" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/releaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/subtitle"
+            tools:text="15 December 2021" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descriptionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/description"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_big"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/runtime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/descriptionTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runtimeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/runtime"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/rating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runtime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/runtimeTitle"
+            tools:text="2h 28min" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/castTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/cast"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_big"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/castTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/reviews"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_big"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/cast" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reviewsTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/similarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:text="@string/similar_movies"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_big"
+            app:layout_constraintStart_toEndOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/reviews" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/similar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/similarTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

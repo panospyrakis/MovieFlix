@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_very_small"
+    android:background="@drawable/list_view_background"
+    android:elevation="@dimen/movie_item_elevation"
+    android:padding="@dimen/padding_tiny">
+
+    <com.spyrakis.movieflix.core.views.TopCropImageView
+        android:id="@+id/poster"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/poster_height"
+        android:background="@drawable/list_item_image_background"
+        android:scaleType="matrix"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/fade_out_black"
+        app:layout_constraintEnd_toEndOf="@id/poster"
+        app:layout_constraintBottom_toBottomOf="@id/poster"
+        app:layout_constraintTop_toBottomOf="@id/guideline50"
+        app:layout_constraintStart_toStartOf="@id/poster"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rating"
+        app:layout_constraintEnd_toEndOf="@id/poster"
+        app:layout_constraintStart_toStartOf="@id/poster"
+        app:layout_constraintTop_toBottomOf="@id/guideline75"
+        tools:text="Solo: A Star Wars story" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressTint="@color/gold"
+        android:rating="4"
+        android:stepSize="0.5"
+        app:layout_constraintBottom_toBottomOf="@id/poster"
+        app:layout_constraintStart_toStartOf="@id/poster"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tiny_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/poster"
+        app:layout_constraintStart_toEndOf="@id/rating"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="Solo: A Star Wars story" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/favouriteBtn"
+        android:layout_width="@dimen/favourite_button_width"
+        android:layout_height="@dimen/favourite_button_height"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/favourite_selector"
+        app:layout_constraintBottom_toBottomOf="@id/poster"
+        app:layout_constraintEnd_toEndOf="@id/poster"
+        app:layout_constraintTop_toBottomOf="@id/guideline75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
